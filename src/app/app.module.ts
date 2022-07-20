@@ -4,23 +4,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
-import { CheckoutComponent } from './checkout/checkout.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { AngularMaterialModule } from './angular-material.module';
+import { CheckoutModule } from './components/checkout/checkout.module';
+import { OrderSideNavComponent } from './components/order-side-nav/order-side-nav.component';
+import { HomeModule } from './components/home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent,
-    CheckoutComponent
+    OrderSideNavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularMaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CheckoutModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
