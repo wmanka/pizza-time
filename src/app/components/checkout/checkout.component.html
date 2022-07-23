@@ -1,19 +1,20 @@
-<p>checkout works!</p>
-
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h1>Checkout</h1>
   <app-client-details [parent]="form"></app-client-details>
+  <app-order-details
+    [parent]="form"
+    (removed)="removeOrderDetail($event)"
+  ></app-order-details>
   <app-payment-details [parent]="form"></app-payment-details>
 
-  <div>
-    <button
-      mat-raised-button
-      color="primary"
-      type="submit"
-      [disabled]="form.invalid"
-    >
-      Submit
-    </button>
-  </div>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="form.invalid"
+  >
+    Place order
+  </button>
 
   <pre>{{ form.value | json }}</pre>
 </form>

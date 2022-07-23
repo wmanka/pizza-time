@@ -1,12 +1,30 @@
-<div *ngIf="parent" [formGroup]="parent">
+<mat-card *ngIf="parent" [formGroup]="parent">
+  <h3>Delivery Address Details</h3>
+  <mat-divider></mat-divider>
+
   <div formGroupName="clientDetails">
-    <mat-form-field appearance="fill">
-      <mat-label>First Name</mat-label>
-      <input matInput type="text" formControlName="firstName" />
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>First Name</mat-label>
-      <input matInput type="text" formControlName="lastName" />
-    </mat-form-field>
+    <table cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput type="text" formControlName="firstName" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput type="text" formControlName="lastName" />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <textarea matInput formControlName="address"></textarea>
+      </mat-form-field>
+    </p>
   </div>
-</div>
+</mat-card>

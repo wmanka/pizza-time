@@ -1,3 +1,17 @@
-<div *ngIf="parent" [formGroup]="parent">
-  <div formGroupName="paymentDetails"></div>
-</div>
+<mat-card *ngIf="parent" [formGroup]="parent">
+  <h3>Payment Details</h3>
+  <mat-divider></mat-divider>
+  <div formGroupName="paymentDetails">
+    <mat-form-field>
+      <mat-label>Payment method</mat-label>
+      <mat-select formControlName="paymentMethod">
+        <mat-option
+          *ngFor="let paymentMethod of paymentMethods"
+          [value]="paymentMethod"
+        >
+          {{ paymentMethodNames[paymentMethod] }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</mat-card>
